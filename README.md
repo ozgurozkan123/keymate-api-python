@@ -10,7 +10,7 @@
 # SDK Installation
 
 ```bash
-pip install Keymate-API
+pip install Keymate-API==0.1.0 # ONLY USE 0.1.0
 ```
 <!-- End SDK Installation -->
 
