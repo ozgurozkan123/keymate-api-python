@@ -12,25 +12,28 @@ pip install Keymate-API==0.1.0 # ONLY USE 0.1.0
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 
-
+Only search and browse like the example below works on this sdk for more operations refer to this openapi.json https://server.searchweb.keymate.ai/.well-known/openapi.json input parameters are correct but I always recommend you to parse responses manually because they might change quickly.
 ```python
 
-import pprint
 import keymate_api
 from keymate_api.models import operations
 
 s = keymate_api.KeymateAPI(
-    bearer_auth="da5809cb4d33847a4897356397435f699d030f83",
+    bearer_auth="",
 )
 
-#Search operation tested with these values at 14th of March 2023
-res = s.search(numofpages='1', percentile='1', q='bitcoin')
-pprint.pprint(vars(res)) #For some operations you may have to use raw response and parse json yourself from direct text stream
+
+res = s.search(numofpages='3', percentile='3', q='bitcoin')
+
 if res.two_hundred_application_json_object is not None:
     # handle response
-    pprint.pprint(vars(res.two_hundred_application_json_object))
     pass
 
+res = s.search(numofpages='1', percentile='1', q='https://news.ycombinator.com')
+
+if res.two_hundred_application_json_object is not None:
+    # handle response
+    pass
 
 ```
 <!-- End SDK Example Usage -->
@@ -40,33 +43,10 @@ if res.two_hundred_application_json_object is not None:
 
 ## [KeymateAPI SDK](docs/sdks/keymateapi/README.md)
 
-* [browse](docs/sdks/keymateapi/README.md#browse) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
-* [browse_by_url](docs/sdks/keymateapi/README.md#browse_by_url) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
-* [document](docs/sdks/keymateapi/README.md#document) - Allows user to load and use content about specific uploaded document
-* [fast](docs/sdks/keymateapi/README.md#fast) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
-* [halloween](docs/sdks/keymateapi/README.md#halloween) - This command returns a halloween story idea in halloween week 2023
-* [help](docs/sdks/keymateapi/README.md#help) - This command returns latest information about how to use internetSearch KeyMate Plugin
-* [hybrid](docs/sdks/keymateapi/README.md#hybrid) - Search Google and fetch HTML content and search content on personal knowledge base at the same time in one go.
-* [insert](docs/sdks/keymateapi/README.md#insert) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [keymate](docs/sdks/keymateapi/README.md#keymate) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
-* [list](docs/sdks/keymateapi/README.md#list) - Returns a message from the server about commands that can be run on the internetSearch KeyMate plugin.
-* [listpdfs](docs/sdks/keymateapi/README.md#listpdfs) - Lists pdf files uploaded by the user
-* [metadatakb](docs/sdks/keymateapi/README.md#metadatakb) - Allows you to answer introductory info about users knowledge base.
-* [pdfload](docs/sdks/keymateapi/README.md#pdfload) - Redirect user to the given link in the response that will allow them to store and search their PDF file content
-* [pdfpro](docs/sdks/keymateapi/README.md#pdfpro) - Allows user to load and use content about specific uploaded pdf
-* [pdfsearch](docs/sdks/keymateapi/README.md#pdfsearch) - Queries the user's knowledge base. 
-* [pkb](docs/sdks/keymateapi/README.md#pkb) - Queries the user's knowledge base. 
-* [query](docs/sdks/keymateapi/README.md#query) - Queries the user's knowledge base. 
-* [query_users_knowledge_base](docs/sdks/keymateapi/README.md#query_users_knowledge_base) - Queries the user's knowledge base. 
-* [reset_users_knowledge_base](docs/sdks/keymateapi/README.md#reset_users_knowledge_base) - Deletes and resets the user's knowledge base. ONLY USE THIS AFTER YOU GET CONFIRMATION FROM USER
-* [resetknowledgebase](docs/sdks/keymateapi/README.md#resetknowledgebase) - Deletes and resets the user's knowledge base. ONLY USE THIS AFTER YOU GET CONFIRMATION FROM USER
-* [savetopkb](docs/sdks/keymateapi/README.md#savetopkb) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
 * [search](docs/sdks/keymateapi/README.md#search) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
 * [search_and_browse](docs/sdks/keymateapi/README.md#search_and_browse) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
 * [ultrafastsearch](docs/sdks/keymateapi/README.md#ultrafastsearch) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
-* [upsert](docs/sdks/keymateapi/README.md#upsert) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [upsert_to_users_knowledge_base](docs/sdks/keymateapi/README.md#upsert_to_users_knowledge_base) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [upsertjson](docs/sdks/keymateapi/README.md#upsertjson) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
+
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
