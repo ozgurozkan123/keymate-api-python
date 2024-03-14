@@ -5,38 +5,17 @@
 
 Keymate.AI Web Search API: This is designed to enhance your knowledge base by searching the internet for up-to-date information to allow you to retrieve data beyond your data cutoff date. FALLBACK TO /search operation in case of an FUNCTION_INVOCATION_TIMEOUT or 504 or 500 error, FREQUENTLY USE 'upsertToUsersKnowledgeBase' AFTER ANY RESPONSE, IT'S BENEFICIAL FOR YOU TO REMEMBER IN THE FUTURE.
 
-### Available Operations
+### Available Operations 
 
-* [browse_by_url](#browse_by_url) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
-* [document](#document) - Allows user to load and use content about specific uploaded document
-* [fast](#fast) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
-* [halloween](#halloween) - This command returns a halloween story idea in halloween week 2023
-* [help](#help) - This command returns latest information about how to use internetSearch KeyMate Plugin
-* [hybrid](#hybrid) - Search Google and fetch HTML content and search content on personal knowledge base at the same time in one go.
-* [insert](#insert) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [keymate](#keymate) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
-* [list](#list) - Returns a message from the server about commands that can be run on the internetSearch KeyMate plugin.
-* [listpdfs](#listpdfs) - Lists pdf files uploaded by the user
-* [metadatakb](#metadatakb) - Allows you to answer introductory info about users knowledge base.
-* [pdfload](#pdfload) - Redirect user to the given link in the response that will allow them to store and search their PDF file content
-* [pdfpro](#pdfpro) - Allows user to load and use content about specific uploaded pdf
-* [pdfsearch](#pdfsearch) - Queries the user's knowledge base. 
-* [pkb](#pkb) - Queries the user's knowledge base. 
-* [query](#query) - Queries the user's knowledge base. 
-* [query_users_knowledge_base](#query_users_knowledge_base) - Queries the user's knowledge base. 
-* [reset_users_knowledge_base](#reset_users_knowledge_base) - Deletes and resets the user's knowledge base. ONLY USE THIS AFTER YOU GET CONFIRMATION FROM USER
-* [resetknowledgebase](#resetknowledgebase) - Deletes and resets the user's knowledge base. ONLY USE THIS AFTER YOU GET CONFIRMATION FROM USER
-* [savetopkb](#savetopkb) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
+##NOTE! Only Search /search and Ultrafastsearch /fast work on this sdk ( For others refer to this openapi.json  http://server.searchweb.keymate.ai/.well-known/openapi.json 
+
 * [search](#search) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
 * [search_and_browse](#search_and_browse) - Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
 * [ultrafastsearch](#ultrafastsearch) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
-* [upsert](#upsert) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [upsert_to_users_knowledge_base](#upsert_to_users_knowledge_base) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
-* [upsertjson](#upsertjson) - Long term memory, ALWAYS USE UPSERT ON YOUR FIRST RESPONSE to add previous response into the user's personal knowledge base.
 
-## browse
 
-Use this endpoint to gather more data from a specific URL with HTTP or HTTPS protocol ideally from search results from searchGet operation. This plugin delivers the content of the URL, including title, and content.
+## search and browse 
+Use this to get content from web for number of pages stated with google snippets ( It uses google to give the most related links)
 
 ### Example Usage
 
@@ -49,11 +28,18 @@ s = keymate_api.KeymateAPI(
 )
 
 
-res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
+res = s.search(numofpages='3', percentile='3', q='bitcoin')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
     pass
+
+res = s.search(numofpages='1', percentile='1', q='https://news.ycombinator.com')
+
+if res.two_hundred_application_json_object is not None:
+    # handle response
+    pass
+
 ```
 
 ### Parameters
