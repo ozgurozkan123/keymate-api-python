@@ -74,7 +74,7 @@ s = keymate_api.KeymateAPI(
 
 res = None
 try:
-    res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
+    res = s.search(numofpages='string', percentile='string', q='http://impressive-silence.info')
 
 except (400_application/json_object) as e:
     print(e) # handle exception
@@ -110,7 +110,7 @@ s = keymate_api.KeymateAPI(
 )
 
 
-res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
+res = s.search(numofpages='string', percentile='string', q='http://impressive-silence.info')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -132,7 +132,7 @@ s = keymate_api.KeymateAPI(
 )
 
 
-res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
+res = s.search(numofpages='string', percentile='string', q='http://impressive-silence.info')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -183,7 +183,7 @@ s = keymate_api.KeymateAPI(
 )
 
 
-res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
+res = s.search(numofpages='string', percentile='string', q='http://impressive-silence.info')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
