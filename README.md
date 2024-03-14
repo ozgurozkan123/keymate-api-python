@@ -14,19 +14,24 @@ pip install Keymate-API==0.1.0 # ONLY USE 0.1.0
 
 
 ```python
+
+import pprint
 import keymate_api
 from keymate_api.models import operations
 
 s = keymate_api.KeymateAPI(
-    bearer_auth="",
+    bearer_auth="da5809cb4d33847a4897356397435f699d030f83",
 )
 
-
-res = s.browse(numofpages='string', percentile='string', q='http://impressive-silence.info', paging='string')
-
+#Search operation tested with these values at 14th of March 2023
+res = s.search(numofpages='1', percentile='1', q='bitcoin')
+pprint.pprint(vars(res)) #For some operations you may have to use raw response and parse json yourself from direct text stream
 if res.two_hundred_application_json_object is not None:
     # handle response
+    pprint.pprint(vars(res.two_hundred_application_json_object))
     pass
+
+
 ```
 <!-- End SDK Example Usage -->
 
