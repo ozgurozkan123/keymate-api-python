@@ -7,7 +7,6 @@ Keymate.AI Web Search API: This is designed to enhance your knowledge base by se
 
 ### Available Operations
 
-* [browse](#browse) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
 * [browse_by_url](#browse_by_url) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
 * [document](#document) - Allows user to load and use content about specific uploaded document
 * [fast](#fast) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
