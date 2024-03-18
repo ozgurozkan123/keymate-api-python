@@ -9,6 +9,7 @@ sources:
     openapi-0.0.3:
         inputs:
             - location: openapi.json
+            - location: openapi.json
 targets:
     Keymate-API:
         target: python
