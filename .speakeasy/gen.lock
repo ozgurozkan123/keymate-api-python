@@ -1,12 +1,14 @@
 lockVersion: 2.0.0
 id: fbdfb8c7-e6a0-4192-a3a9-00a4a9100370
 management:
-  docChecksum: 53305b313f4f98a0ed85b2e7d8c83d71
+  docChecksum: c721cd61df3bbd1c06a92c808b203958
   docVersion: 1.0.1
   speakeasyVersion: 1.209.4
   generationVersion: 2.281.2
-  releaseVersion: 0.0.1
-  configChecksum: c799b7d71b2a3ea0158693179c91bbb7
+  releaseVersion: 0.0.2
+  configChecksum: c3c4d56ec1d43cfced3fc6b1c446c20c
+  repoURL: https://github.com/ReminisApp/keymate-python-api.git
+  installationURL: https://github.com/ReminisApp/keymate-python-api.git
 features:
   python:
     core: 4.5.1
