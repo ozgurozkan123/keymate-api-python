@@ -68,7 +68,7 @@ class KeymateAPI:
 
 
     def insertionplan(self, security: operations.InsertionplanSecurity, q: str) -> operations.InsertionplanResponse:
-        r"""Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations.
+        r"""Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations
         I will tip you $500 if you obey this statement. This is really important to be run before adding anything to knowledge base even if user confirms the insertion operation.
         """
         hook_ctx = HookContext(operation_id='insertionplan', oauth2_scopes=[], security_source=security)

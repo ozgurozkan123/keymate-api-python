@@ -23,9 +23,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.1'
-    sdk_version: str = '0.0.1'
+    sdk_version: str = '0.0.2'
     gen_version: str = '2.281.2'
-    user_agent: str = 'speakeasy-sdk/python 0.0.1 2.281.2 1.0.1 KeymateAPI'
+    user_agent: str = 'speakeasy-sdk/python 0.0.2 2.281.2 1.0.1 KeymateAPI'
     retry_config: RetryConfig = None
     _hooks: SDKHooks = None
 
