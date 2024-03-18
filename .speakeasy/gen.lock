@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.1
   speakeasyVersion: 1.209.4
   generationVersion: 2.281.2
-  releaseVersion: 0.0.2
-  configChecksum: c3c4d56ec1d43cfced3fc6b1c446c20c
+  releaseVersion: 0.0.3
+  configChecksum: bf347ce1fdaffdbd27f291f9927da0c5
   repoURL: https://github.com/ReminisApp/keymate-python-api.git
   installationURL: https://github.com/ReminisApp/keymate-python-api.git
 features:
