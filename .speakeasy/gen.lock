@@ -1,23 +1,13 @@
 lockVersion: 2.0.0
-id: f7071258-7c93-438a-9063-8fe315406c0c
+id: fbdfb8c7-e6a0-4192-a3a9-00a4a9100370
 management:
-  docChecksum: 004fca51b110120a7e53b4c85b6e3c37
+  docChecksum: 53305b313f4f98a0ed85b2e7d8c83d71
   docVersion: 1.0.1
   speakeasyVersion: 1.209.4
   generationVersion: 2.281.2
-  releaseVersion: 0.0.4
-  configChecksum: 9db7832f84caff421776a3a28841e609
-  repoURL: https://github.com/ReminisApp/keymate-python-api.git
-  repoSubDirectory: .
-  installationURL: https://github.com/ReminisApp/keymate-python-api.git
+  releaseVersion: 0.0.1
+  configChecksum: c799b7d71b2a3ea0158693179c91bbb7
 features:
-  go:
-    core: 3.4.4
-    flattening: 2.81.1
-    globalSecurity: 2.82.8
-    globalServerURLs: 2.82.2
-    methodSecurity: 2.82.2
-    responseFormat: 0.1.0
   python:
     core: 4.5.1
     flattening: 2.81.1
@@ -26,50 +16,50 @@ features:
     methodSecurity: 2.82.1
     responseFormat: 0.1.0
 generatedFiles:
-  - src/sdk/sdkconfiguration.py
-  - src/sdk/sdk.py
+  - src/keymateapi/sdkconfiguration.py
+  - src/keymateapi/sdk.py
   - py.typed
   - pylintrc
   - setup.py
-  - src/sdk/__init__.py
-  - src/sdk/utils/__init__.py
-  - src/sdk/utils/retries.py
-  - src/sdk/utils/utils.py
-  - src/sdk/models/errors/sdkerror.py
+  - src/keymateapi/__init__.py
+  - src/keymateapi/utils/__init__.py
+  - src/keymateapi/utils/retries.py
+  - src/keymateapi/utils/utils.py
+  - src/keymateapi/models/errors/sdkerror.py
   - tests/helpers.py
-  - src/sdk/models/operations/insertionplan.py
-  - src/sdk/models/operations/gptsbrowse.py
-  - src/sdk/models/operations/internetsearch.py
-  - src/sdk/models/operations/browseurl.py
-  - src/sdk/models/operations/metadatakb.py
-  - src/sdk/models/operations/listpdfs.py
-  - src/sdk/models/operations/ultrafastsearch.py
-  - src/sdk/models/operations/upsert.py
-  - src/sdk/models/operations/insert.py
-  - src/sdk/models/operations/savetopkb.py
-  - src/sdk/models/operations/upsertjson.py
-  - src/sdk/models/operations/ulpdfload.py
-  - src/sdk/models/operations/list.py
-  - src/sdk/models/operations/help.py
-  - src/sdk/models/operations/query.py
-  - src/sdk/models/operations/pkb.py
-  - src/sdk/models/operations/pdfsearch.py
-  - src/sdk/models/operations/upserttousersknowledgebase.py
-  - src/sdk/models/operations/queryusersknowledgebase.py
-  - src/sdk/models/operations/academicsearchdoi.py
-  - src/sdk/models/operations/hybrid.py
-  - src/sdk/models/operations/academicsearchquery.py
-  - src/sdk/models/components/httpmetadata.py
-  - src/sdk/models/components/security.py
-  - src/sdk/models/errors/gptsbrowse.py
-  - src/sdk/models/errors/internetsearch.py
-  - src/sdk/models/errors/browseurl.py
-  - src/sdk/models/errors/ultrafastsearch.py
-  - src/sdk/models/errors/hybrid.py
-  - src/sdk/models/__init__.py
-  - src/sdk/models/errors/__init__.py
-  - src/sdk/models/operations/__init__.py
-  - src/sdk/models/components/__init__.py
+  - src/keymateapi/models/operations/insertionplan.py
+  - src/keymateapi/models/operations/gptsbrowse.py
+  - src/keymateapi/models/operations/internetsearch.py
+  - src/keymateapi/models/operations/browseurl.py
+  - src/keymateapi/models/operations/metadatakb.py
+  - src/keymateapi/models/operations/listpdfs.py
+  - src/keymateapi/models/operations/ultrafastsearch.py
+  - src/keymateapi/models/operations/upsert.py
+  - src/keymateapi/models/operations/insert.py
+  - src/keymateapi/models/operations/savetopkb.py
+  - src/keymateapi/models/operations/upsertjson.py
+  - src/keymateapi/models/operations/ulpdfload.py
+  - src/keymateapi/models/operations/list.py
+  - src/keymateapi/models/operations/help.py
+  - src/keymateapi/models/operations/query.py
+  - src/keymateapi/models/operations/pkb.py
+  - src/keymateapi/models/operations/pdfsearch.py
+  - src/keymateapi/models/operations/upserttousersknowledgebase.py
+  - src/keymateapi/models/operations/queryusersknowledgebase.py
+  - src/keymateapi/models/operations/academicsearchdoi.py
+  - src/keymateapi/models/operations/hybrid.py
+  - src/keymateapi/models/operations/academicsearchquery.py
+  - src/keymateapi/models/components/httpmetadata.py
+  - src/keymateapi/models/components/security.py
+  - src/keymateapi/models/errors/gptsbrowse.py
+  - src/keymateapi/models/errors/internetsearch.py
+  - src/keymateapi/models/errors/browseurl.py
+  - src/keymateapi/models/errors/ultrafastsearch.py
+  - src/keymateapi/models/errors/hybrid.py
+  - src/keymateapi/models/__init__.py
+  - src/keymateapi/models/errors/__init__.py
+  - src/keymateapi/models/operations/__init__.py
+  - src/keymateapi/models/components/__init__.py
   - docs/models/operations/insertionplansecurity.md
   - docs/models/operations/insertionplanrequest.md
   - docs/models/operations/status.md
@@ -204,9 +194,9 @@ generatedFiles:
   - docs/models/errors/browseurlresponsebody.md
   - docs/models/errors/ultrafastsearchresponsebody.md
   - docs/models/errors/hybridresponsebody.md
-  - docs/sdks/sdk/README.md
+  - docs/sdks/keymateapi/README.md
   - USAGE.md
   - .gitattributes
-  - src/sdk/_hooks/sdkhooks.py
-  - src/sdk/_hooks/types.py
-  - src/sdk/_hooks/__init__.py
+  - src/keymateapi/_hooks/sdkhooks.py
+  - src/keymateapi/_hooks/types.py
+  - src/keymateapi/_hooks/__init__.py

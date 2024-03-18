@@ -1,6 +1,6 @@
 configVersion: 2.0.0
 generation:
-  sdkClassName: SDK
+  sdkClassName: KeymateAPI
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -11,26 +11,8 @@ generation:
     requestResponseComponentNamesFeb2024: true
   auth:
     oAuth2ClientCredentialsEnabled: false
-go:
-  version: 0.0.1
-  additionalDependencies: {}
-  clientServerStatusCodesAsErrors: true
-  flattenGlobalSecurity: true
-  imports:
-    option: openapi
-    paths:
-      callbacks: models/callbacks
-      errors: models/sdkerrors
-      operations: models/operations
-      shared: models/components
-      webhooks: models/webhooks
-  inputModelSuffix: input
-  maxMethodParams: 4
-  outputModelSuffix: output
-  packageName: openapi
-  responseFormat: envelope-http
 python:
-  version: 0.0.4
+  version: 0.0.1
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -50,5 +32,5 @@ python:
   inputModelSuffix: input
   maxMethodParams: 4
   outputModelSuffix: output
-  packageName: openapi
+  packageName: KeymateAPI
   responseFormat: envelope-http

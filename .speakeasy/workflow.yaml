@@ -1,27 +1,9 @@
 workflowVersion: 1.0.0
 sources:
-    last:
-        inputs:
-            - location: openapi.json
     openapi:
         inputs:
             - location: openapi.json
-    openapi-0.0.3:
-        inputs:
-            - location: openapi.json
-            - location: openapi.json
 targets:
-    Keymate-API:
-        target: python
-        source: last
-        output: sdk
-        publish:
-            pypi:
-                token: $pypi_token
     first-target:
         target: python
-        source: openapi-0.0.3
-        output: ./.
-        publish:
-            pypi:
-                token: $pypi_token
+        source: openapi
