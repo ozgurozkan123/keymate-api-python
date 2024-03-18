@@ -4,7 +4,7 @@ Based on:
 - OpenAPI Doc  
 - Speakeasy CLI 1.209.3 (2.281.2) https://github.com/speakeasy-api/speakeasy
 ### Generated
-- [python v0.0.2] .
+- [python v0.0.6] .
 ### Releases
-- [PyPI v0.0.2] https://pypi.org/project/Keymate-API/0.0.2 - .
+- [PyPI v0.0.6] https://pypi.org/project/Keymate-API/0.0.6 - .
 
