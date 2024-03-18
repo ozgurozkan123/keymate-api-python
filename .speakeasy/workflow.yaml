@@ -3,10 +3,13 @@ sources:
     openapi:
         inputs:
             - location: openapi.json
+    openapi-0.0.3:
+        inputs:
+            - location: openapi.json
 targets:
     first-target:
         target: python
-        source: openapi
+        source: openapi-0.0.3
         output: ./
         publish:
             pypi:
