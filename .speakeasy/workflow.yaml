@@ -4,7 +4,9 @@ sources:
         inputs:
             - location: openapi.json
 targets:
-    keymate-api-python-latest:
+    first-target:
         target: python
         source: openapi
-        output: ./
+        publish:
+            pypi:
+                token: $pypi_token
