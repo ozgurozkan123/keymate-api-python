@@ -4,7 +4,7 @@
   "info": {
     "title": "Keymate.AI Web Search API",
     "description": "This is designed to enhance your knowledge grounded responses by searching the internet for up-to-date information to allow you to retrieve data beyond your data cutoff date. FALLBACK TO /internetsearch operation inputwindowwords 4000 in case of an FUNCTION_INVOCATION_TIMEOUT or 504 or 500 error",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "paths": {
     "/insertionplan": {
