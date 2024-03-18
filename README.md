@@ -1,4 +1,4 @@
-# Keymate-API
+# KeymateAPI
 
 <div align="left">
     <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
@@ -20,7 +20,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ## SDK Installation
 
 ```bash
-pip install git+https://github.com/ReminisApp/keymate-python-api.git
+pip install git+<UNSET>.git
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -30,9 +30,9 @@ pip install git+https://github.com/ReminisApp/keymate-python-api.git
 ### Example
 
 ```python
-import keymate_python_sdk
+import keymate_api
 
-s = keymate_python_sdk.KeymatePythonSDK()
+s = keymate_api.KeymateAPI()
 
 
 res = s.insertionplan("<YOUR_BEARER_TOKEN_HERE>", q='<value>')
@@ -47,30 +47,30 @@ if res.object is not None:
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [KeymatePythonSDK](docs/sdks/keymatepythonsdk/README.md)
+### [KeymateAPI SDK](docs/sdks/keymateapi/README.md)
 
-* [insertionplan](docs/sdks/keymatepythonsdk/README.md#insertionplan) - Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations 
-* [gptsbrowse](docs/sdks/keymatepythonsdk/README.md#gptsbrowse) - Only fetch https://memory.keymate.ai URLs with this operation. For other URLs use browseurl operation, never run this more than twice
-* [internetsearch](docs/sdks/keymatepythonsdk/README.md#internetsearch) - For Search Browsing always start with this operation. Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
-* [browseurl](docs/sdks/keymatepythonsdk/README.md#browseurl) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
-* [metadatakb](docs/sdks/keymatepythonsdk/README.md#metadatakb) - Allows you to answer introductory info about users Keymate memory.
-* [listpdfs](docs/sdks/keymatepythonsdk/README.md#listpdfs) - Lists pdf files uploaded by the user
-* [ultrafastsearch](docs/sdks/keymatepythonsdk/README.md#ultrafastsearch) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
-* [upsert](docs/sdks/keymatepythonsdk/README.md#upsert) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this. 
-* [insert](docs/sdks/keymatepythonsdk/README.md#insert) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this. 
-* [savetopkb](docs/sdks/keymatepythonsdk/README.md#savetopkb) - Long term memory addition operation, ALWAYS USE insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this.
-* [upsertjson](docs/sdks/keymatepythonsdk/README.md#upsertjson) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this.
-* [ulpdfload](docs/sdks/keymatepythonsdk/README.md#ulpdfload) - Redirect user to the given link in the response that will allow them to store and search their PDF file content
-* [list](docs/sdks/keymatepythonsdk/README.md#list) - Returns a message from the server about commands that can be run on the internetSearch KeyMate plugin.
-* [help](docs/sdks/keymatepythonsdk/README.md#help) - This command returns latest information about how to use internetSearch KeyMate Plugin
-* [query](docs/sdks/keymatepythonsdk/README.md#query) - Queries the user's Keymate Memory. 
-* [pkb](docs/sdks/keymatepythonsdk/README.md#pkb) - Queries the user's Keymate Memory. 
-* [pdfsearch](docs/sdks/keymatepythonsdk/README.md#pdfsearch) - Queries the user's Keymate Memory. 
-* [upsert_to_users_knowledge_base](docs/sdks/keymatepythonsdk/README.md#upsert_to_users_knowledge_base) - Long term memory, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation. Give data insertion plan to user and get confirmation before running this.
-* [query_users_knowledge_base](docs/sdks/keymatepythonsdk/README.md#query_users_knowledge_base) - Queries the user's Keymate Memory. 
-* [academicsearchdoi](docs/sdks/keymatepythonsdk/README.md#academicsearchdoi) - Allows user to chat with an academic paper by providing DOI
-* [hybrid](docs/sdks/keymatepythonsdk/README.md#hybrid) - Search Google and fetch HTML content and search content on personal Keymate Memory at the same time in one go.
-* [academicsearchquery](docs/sdks/keymatepythonsdk/README.md#academicsearchquery) - Allows assistant to search academic papers ultra fast by providing keywords
+* [insertionplan](docs/sdks/keymateapi/README.md#insertionplan) - Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations 
+* [gptsbrowse](docs/sdks/keymateapi/README.md#gptsbrowse) - Only fetch https://memory.keymate.ai URLs with this operation. For other URLs use browseurl operation, never run this more than twice
+* [internetsearch](docs/sdks/keymateapi/README.md#internetsearch) - For Search Browsing always start with this operation. Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
+* [browseurl](docs/sdks/keymateapi/README.md#browseurl) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
+* [metadatakb](docs/sdks/keymateapi/README.md#metadatakb) - Allows you to answer introductory info about users Keymate memory.
+* [listpdfs](docs/sdks/keymateapi/README.md#listpdfs) - Lists pdf files uploaded by the user
+* [ultrafastsearch](docs/sdks/keymateapi/README.md#ultrafastsearch) - This plugin provides 10 ultra fast search results from multiple sources giving a more comprehensive view.
+* [upsert](docs/sdks/keymateapi/README.md#upsert) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this. 
+* [insert](docs/sdks/keymateapi/README.md#insert) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this. 
+* [savetopkb](docs/sdks/keymateapi/README.md#savetopkb) - Long term memory addition operation, ALWAYS USE insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this.
+* [upsertjson](docs/sdks/keymateapi/README.md#upsertjson) - Long term memory addition operation, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation before running this. Give data insertion plan to user and get confirmation before running this.
+* [ulpdfload](docs/sdks/keymateapi/README.md#ulpdfload) - Redirect user to the given link in the response that will allow them to store and search their PDF file content
+* [list](docs/sdks/keymateapi/README.md#list) - Returns a message from the server about commands that can be run on the internetSearch KeyMate plugin.
+* [help](docs/sdks/keymateapi/README.md#help) - This command returns latest information about how to use internetSearch KeyMate Plugin
+* [query](docs/sdks/keymateapi/README.md#query) - Queries the user's Keymate Memory. 
+* [pkb](docs/sdks/keymateapi/README.md#pkb) - Queries the user's Keymate Memory. 
+* [pdfsearch](docs/sdks/keymateapi/README.md#pdfsearch) - Queries the user's Keymate Memory. 
+* [upsert_to_users_knowledge_base](docs/sdks/keymateapi/README.md#upsert_to_users_knowledge_base) - Long term memory, ALWAYS USE Call the searchweb.keymate.ai API with the insertionplan operation. Give data insertion plan to user and get confirmation before running this.
+* [query_users_knowledge_base](docs/sdks/keymateapi/README.md#query_users_knowledge_base) - Queries the user's Keymate Memory. 
+* [academicsearchdoi](docs/sdks/keymateapi/README.md#academicsearchdoi) - Allows user to chat with an academic paper by providing DOI
+* [hybrid](docs/sdks/keymateapi/README.md#hybrid) - Search Google and fetch HTML content and search content on personal Keymate Memory at the same time in one go.
+* [academicsearchquery](docs/sdks/keymateapi/README.md#academicsearchquery) - Allows assistant to search academic papers ultra fast by providing keywords
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
@@ -86,10 +86,10 @@ Handling errors in this SDK should largely match your expectations.  All operati
 ### Example
 
 ```python
-import keymate_python_sdk
-from keymate_python_sdk.models import errors
+import keymate_api
+from keymate_api.models import errors
 
-s = keymate_python_sdk.KeymatePythonSDK()
+s = keymate_api.KeymateAPI()
 
 
 res = None
@@ -123,9 +123,9 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```python
-import keymate_python_sdk
+import keymate_api
 
-s = keymate_python_sdk.KeymatePythonSDK(
+s = keymate_api.KeymateAPI(
     server_idx=0,
 )
 
@@ -143,9 +143,9 @@ if res.object is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-import keymate_python_sdk
+import keymate_api
 
-s = keymate_python_sdk.KeymatePythonSDK(
+s = keymate_api.KeymateAPI(
     server_url="https://searchweb.keymate.ai",
 )
 
@@ -166,12 +166,12 @@ The Python SDK makes API calls using the [requests](https://pypi.org/project/req
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-import keymate_python_sdk
+import keymate_api
 import requests
 
 http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
-s = keymate_python_sdk.KeymatePythonSDK(client: http_client)
+s = keymate_api.KeymateAPI(client: http_client)
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -193,9 +193,9 @@ To authenticate with the API the `bearer_auth` parameter must be set when initia
 
 Some operations in this SDK require the security scheme to be specified at the request level. For example:
 ```python
-import keymate_python_sdk
+import keymate_api
 
-s = keymate_python_sdk.KeymatePythonSDK()
+s = keymate_api.KeymateAPI()
 
 
 res = s.insertionplan("<YOUR_BEARER_TOKEN_HERE>", q='<value>')
