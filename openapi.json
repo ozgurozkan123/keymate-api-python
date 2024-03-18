@@ -1819,7 +1819,7 @@
   ],
   "servers": [
     {
-      "url": "https://searchweb.keymate.ai"
+      "url": "https://server.searchweb.keymate.ai"
     }
   ]
 }
