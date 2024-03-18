@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from keymate_api import utils
 from typing import Optional
+
+
+@dataclasses.dataclass
+class UpsertToUsersKnowledgeBaseSecurity:
+    bearer_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
 
 
 @dataclasses.dataclass
@@ -36,13 +43,8 @@ class UpsertToUsersKnowledgeBaseResponseBody:
 
 @dataclasses.dataclass
 class UpsertToUsersKnowledgeBaseResponse:
-    content_type: str = dataclasses.field()
-    r"""HTTP response content type for this operation"""
-    status_code: int = dataclasses.field()
-    r"""HTTP response status code for this operation"""
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     object: Optional[UpsertToUsersKnowledgeBaseResponseBody] = dataclasses.field(default=None)
     r"""Successful operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

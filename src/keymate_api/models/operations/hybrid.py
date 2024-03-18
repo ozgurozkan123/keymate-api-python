@@ -2,27 +2,34 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from keymate_api import utils
 from typing import List, Optional
 
 
 @dataclasses.dataclass
+class HybridSecurity:
+    bearer_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
+
+
+@dataclasses.dataclass
 class HybridRequest:
-    numofpages: str = dataclasses.field(metadata={'query_param': { 'field_name': 'numofpages', 'style': 'form', 'explode': True }})
-    r"""Start it as '3'. Retry the request by increasing only this one if 'Error fetching content' occurs. Should be between 1 and 10."""
-    percentile: str = dataclasses.field(metadata={'query_param': { 'field_name': 'percentile', 'style': 'form', 'explode': True }})
-    r"""Start it as '3', increase to '6' if ResponseTooLarge occurs, only reduce to '1' or '2' if user requests it."""
     q: str = dataclasses.field(metadata={'query_param': { 'field_name': 'q', 'style': 'form', 'explode': True }})
     r"""Search query"""
+    percentile: str = dataclasses.field(metadata={'query_param': { 'field_name': 'percentile', 'style': 'form', 'explode': True }})
+    r"""Start it as '3', increase to '6' if ResponseTooLarge occurs, only reduce to '1' or '2' if user requests it."""
+    numofpages: str = dataclasses.field(metadata={'query_param': { 'field_name': 'numofpages', 'style': 'form', 'explode': True }})
+    r"""Start it as '3'. Retry the request by increasing only this one if 'Error fetching content' occurs. Should be between 1 and 10."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class HybridResponseDefaultResponseBody:
+class HybridResponseResponseBody:
     r"""Error fetching search results"""
     error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     r"""Error message"""
@@ -33,14 +40,14 @@ class HybridResponseDefaultResponseBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class HybridResults:
-    full_content: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('full_content'), 'exclude': lambda f: f is None }})
-    r"""The entire HTML content of the search result (available for the first three results)"""
+    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
+    r"""The title of the search result"""
     link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link'), 'exclude': lambda f: f is None }})
     r"""The URL of the search result"""
     summary: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary'), 'exclude': lambda f: f is None }})
     r"""A summary of the HTML content of the search result (available for the first five results)"""
-    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
-    r"""The title of the search result"""
+    full_content: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('full_content'), 'exclude': lambda f: f is None }})
+    r"""The entire HTML content of the search result (available for the first three results)"""
     
 
 
@@ -58,15 +65,10 @@ class HybridResponseBody:
 
 @dataclasses.dataclass
 class HybridResponse:
-    content_type: str = dataclasses.field()
-    r"""HTTP response content type for this operation"""
-    status_code: int = dataclasses.field()
-    r"""HTTP response status code for this operation"""
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     two_hundred_application_json_object: Optional[HybridResponseBody] = dataclasses.field(default=None)
     r"""Successful operation"""
-    default_application_json_object: Optional[HybridResponseDefaultResponseBody] = dataclasses.field(default=None)
+    default_application_json_object: Optional[HybridResponseResponseBody] = dataclasses.field(default=None)
     r"""Error fetching search results"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

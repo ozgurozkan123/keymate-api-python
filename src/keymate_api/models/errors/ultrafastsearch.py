@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from keymate_api import utils
 from typing import Optional
@@ -13,11 +13,10 @@ from typing import Optional
 @dataclasses.dataclass
 class UltrafastsearchResponseBody(Exception):
     r"""Bad request"""
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error'), 'exclude': lambda f: f is None }})
     r"""Error message"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: True }})
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

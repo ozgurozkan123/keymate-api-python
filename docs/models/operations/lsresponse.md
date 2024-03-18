@@ -1,0 +1,9 @@
+# LsResponse
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `http_meta`                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)               | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |
+| `object`                                                                         | [Optional[operations.LsResponseBody]](../../models/operations/lsresponsebody.md) | :heavy_minus_sign:                                                               | Successful operation                                                             | {<br/>"status": "success"<br/>}                                                  |

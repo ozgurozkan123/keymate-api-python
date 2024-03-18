@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from keymate_api import utils
 from typing import Optional
+
+
+@dataclasses.dataclass
+class HelpSecurity:
+    bearer_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,7 +27,7 @@ class HelpStatus:
     numofpages: If you prompt chatgpt numofpages to be set between 1-10 it determines how many first results of Google Search links will be provided to the ChatGPT
     percentile: If you prompt chatgpt percentile to be set between 1-100 it determines how large or small would be the content passed to the ChatGPT. The higher the value is the lesser content will be passed to ChatGPT. Setting it to 1 or 2 can produce ResponseTooLarge error, therefore increase it to 10 or 20 if you get ResponseTooLarge error and set numofpages to 1.<
 
-    1. searchAndBrowse
+    1. internetsearch
     What it does: Searches the internet using a query and returns some content from these pages.
     Parameters:
     q: Search query
@@ -28,7 +35,7 @@ class HelpStatus:
     numofpages: Start at '3', can be adjusted
     When to use: When you need to find general information from multiple sources on the internet.
 
-    2. ultraFastSearch
+    2. ultrafastsearch
     What it does: Provides ultra-fast 10 search results based on search query and their snippets .
     Parameters:
     q: URL of the website
@@ -36,7 +43,7 @@ class HelpStatus:
     numofpages: Set at '10'
     When to use: When you need quick and accurate information from the web.
 
-    3. browseByUrl
+    3. browseurl
     What it does: Gathers more data from a specific URL.
     Parameters:
     q: URL of the website
@@ -46,24 +53,37 @@ class HelpStatus:
     When to use: When you need to delve deeper into the content of a specific webpage.
 
     4. upsertToUsersKnowledgeBase
-    What it does: Inserts the last response into the user's personal knowledge base. Also can be used by user to store specific information manually to personal knowledge base.
+    What it does: Inserts the last response into the user's personal Keymate Memory. Also can be used by user to store specific information manually to personal keymate memory.
     Parameters:
     q: Data text to be embedded
     When to use: To remember the context in following conversations.
 
     5. queryUsersKnowledgeBase
-    What it does: Retrieves data previously inserted into the user's personal knowledge base. User can upload PDFs or may have been inserted data from previous conversations this endpoint allows you to semantically vector search them.
+    What it does: Retrieves data previously inserted into the user's personal Keymate Memory. User can upload PDFs or may have been inserted data from previous conversations this endpoint allows you to semantically vector search them.
     Parameters:
     q: Context you are searching from the user's history
     When to use: To understand user's intent, context, or preferences or querying user's information store.
 
 
-    6. resetUsersKnowledgeBase
-    What it does: Deletes all data previously inserted into the user's personal knowledge base.
+    6. reset 
+    What it does: Deletes all data previously inserted into the user's personal Keymate Memory.
     Parameters:
     q: Set this parameter as ''
-    When to use: To clear all personal knowledge base entries.
-    Don't use if: You can't delete just one item so if you try to delete just one item it can delete your whole personal knowledge base.
+    When to use: To clear all personal Keymate Memory entries.
+    Don't use if: You can't delete just one item so if you try to delete just one item it can delete your whole personal Keymate Memory.
+
+
+    7. academicsearchdoi
+    What it does: Loads an Academic Paper from a given DOI and allows ChatGPT to use whole text of the paper.
+    Parameters:
+    doi: Set this parameter as doi given by the user. 
+    When to use: When you want to understand a paper and would like AI to use the full text of any paper.
+
+    8. academicsearchquery
+    What it does: Searches academic papers based on text queries.
+    Parameters:
+    query: Set this parameter as the topic of scientific research. 
+    When to use: When you want to do an academic research.
     """
     
 
@@ -80,13 +100,8 @@ class HelpResponseBody:
 
 @dataclasses.dataclass
 class HelpResponse:
-    content_type: str = dataclasses.field()
-    r"""HTTP response content type for this operation"""
-    status_code: int = dataclasses.field()
-    r"""HTTP response status code for this operation"""
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     object: Optional[HelpResponseBody] = dataclasses.field(default=None)
     r"""Successful operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

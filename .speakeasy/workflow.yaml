@@ -1,0 +1,10 @@
+workflowVersion: 1.0.0
+sources:
+    openapi:
+        inputs:
+            - location: openapi.json
+targets:
+    keymate-api-python-latest:
+        target: python
+        source: openapi
+        output: ./
