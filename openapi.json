@@ -10,7 +10,7 @@
     "/insertionplan": {
       "get": {
         "operationId": "insertionplan",
-        "summary": "Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations. ",
+        "summary": "Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations",
 "security": [
                             {
                                 "BearerAuth": []
