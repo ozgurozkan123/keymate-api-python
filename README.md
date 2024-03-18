@@ -49,7 +49,7 @@ if res.object is not None:
 
 ### [KeymateAPI SDK](docs/sdks/keymateapi/README.md)
 
-* [insertionplan](docs/sdks/keymateapi/README.md#insertionplan) - Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations 
+* [insertionplan](docs/sdks/keymateapi/README.md#insertionplan) - Long term memory information addition plan, run this operation before adding anything to the keymate memory personal knowledge base before /upsert /upsertjson /upserttoUsersKnowledgebase /savetopkb /upsertToUsersKnowledgeBase operations. 
 * [gptsbrowse](docs/sdks/keymateapi/README.md#gptsbrowse) - Only fetch https://memory.keymate.ai URLs with this operation. For other URLs use browseurl operation, never run this more than twice
 * [internetsearch](docs/sdks/keymateapi/README.md#internetsearch) - For Search Browsing always start with this operation. Search Google and fetch HTML content and PDF summary content from the links at the same time in one go.
 * [browseurl](docs/sdks/keymateapi/README.md#browseurl) - The plugin enables user to conduct web browsing by extracting the text content of a specified URL. It will generate title and content.
