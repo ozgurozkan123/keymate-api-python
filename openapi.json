@@ -115,7 +115,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "results": {
+                     "currentkeymateuser": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "noticeforhuman": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },"results": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -260,7 +271,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "results": {
+                     "currentkeymateuser": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "noticeforhuman": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },"results": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -421,7 +443,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "results": {
+                     "currentkeymateuser": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "noticeforhuman": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },"results": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -710,7 +743,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "results": {
+                     "currentkeymateuser": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "noticeforhuman": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },"results": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -1626,7 +1670,18 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "results": {
+                     "currentkeymateuser": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "noticeforhuman": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "The rules which recommend gpt to follow."
+                    },"results": {
                       "type": "array",
                       "items": {
                         "type": "object",
