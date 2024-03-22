@@ -1,5 +1,7 @@
 # keymateapi
 
+If you require an sdk in another programming language send us an email at team@keymate.ai
+or feel free to conduct your API operations based on this file https://github.com/ReminisApp/keymate-python-api/blob/main/openapi.json
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
