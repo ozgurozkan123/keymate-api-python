@@ -3,10 +3,13 @@ sources:
     first:
         inputs:
             - location: openapi.json
+    second:
+        inputs:
+            - location: openapi.json
 targets:
     first-target:
         target: python
-        source: first
+        source: second
         publish:
             pypi:
                 token: $pypi_token
