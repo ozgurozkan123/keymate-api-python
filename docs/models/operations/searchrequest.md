@@ -1,0 +1,10 @@
+# SearchRequest
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `q`                                                                              | *str*                                                                            | :heavy_check_mark:                                                               | URL starting with https://memory.keymate.ai. Must be a valid URL.                |                                                                                  |
+| `percentile`                                                                     | *str*                                                                            | :heavy_check_mark:                                                               | For adjusting response scope in case of 'ResponseTooLarge' error. Starts with 1. | 1                                                                                |
+| `numofpages`                                                                     | *str*                                                                            | :heavy_check_mark:                                                               | Specifies the number of pages to return. Starts with 1 by default.               | 1                                                                                |
