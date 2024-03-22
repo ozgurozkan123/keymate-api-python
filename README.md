@@ -23,6 +23,7 @@ pip install keymateapi
 ```python
 import keymateapi
 
+#Get your API token at https://my.keymate.ai/pricing
 s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
