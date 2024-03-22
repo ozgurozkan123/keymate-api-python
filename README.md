@@ -19,7 +19,7 @@ pip install keymateapi
 ## SDK Example Usage
 
 ### Example
-
+See more examples under tests folder!
 ```python
 import keymateapi
 
