@@ -98,23 +98,40 @@ This is the most powerful browsing endpoints it uses residential proxies and byp
 
 ```python
 import keymateapi
-from keymateapi.models import operations
+from keymateapi.models import errors, operations
 
+# Get your API token at https://my.keymate.ai/pricing
 s = keymateapi.Keymateapi(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    bearer_auth="",
 )
 
-res = s.browseurl(request=operations.BrowseurlRequest(
-    inputwindowwords='10000',
-    q='https://keymate.ai',
-    percentile='1',
-    numofpages='1',
-    paging='1',
-))
+item_url = "https://www.rona.ca/en/product/danby-12-000-btu-8-000-sacc-115-v-white-portable-air-conditioner-dpa080b1wdb-6-330987187"
+req = operations.BrowseurlRequest(inputwindowwords="5000", q=item_url, percentile="1", numofpages="1", paging="1")
+res = s.browseurl(req)
 
-if res.two_hundred_application_json_object is not None:
+def handle_response(response):
+    content_type = response.http_res.headers.get('Content-Type', '')
+    
+    # Attempt to parse the response as JSON regardless of Content-Type
+    try:
+        response_json = response.http_res.json()
+        return response_json
+    except ValueError:
+        # If JSON parsing fails, fall back to handling as plain text
+        if 'text/plain' in content_type:
+            return {'text': response.http_res.text}
+        else:
+            raise errors.SDKError(f'Unknown content-type received: {content_type}', response.http_res.status_code, response.http_res.text, response.http_res)
+
+if res is not None and hasattr(res, 'object'):
     # handle response
-    pass
+    try:
+        parsed_response = handle_response(res)
+        print(res)
+    except errors.SDKError as e:
+        print(f"An error occurred: {e}")
+
+print(res)
 
 ```
 
