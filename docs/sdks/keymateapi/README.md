@@ -29,8 +29,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.upsert(q='<value>')
+res = s.upsert(q='I prefer Costa over Starbucks.')
 
 if res.object is not None:
     # handle response
@@ -40,9 +39,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `q`                                                                     | *str*                                                                   | :heavy_check_mark:                                                      | The context you are insertin to user's personal Keymate Memory history. |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `q`                                                                     | *str*                                                                   | :heavy_check_mark:                                                      | The context you are insertin to user's personal Keymate Memory history. | I prefer Costa over Starbucks.                                          |
 
 
 ### Response
@@ -52,7 +51,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## query
 
@@ -67,8 +66,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.query(q='<value>')
+res = s.query(q='https://keymate.ai')
 
 if res.object is not None:
     # handle response
@@ -78,9 +76,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `q`                                                                        | *str*                                                                      | :heavy_check_mark:                                                         | The context you are searching from user's personal Keymate Memory history. |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `q`                                                                        | *str*                                                                      | :heavy_check_mark:                                                         | The context you are searching from user's personal Keymate Memory history. | https://keymate.ai                                                         |
 
 
 ### Response
@@ -90,7 +88,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## browseurl
 
@@ -106,14 +104,13 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.BrowseurlRequest(
-    inputwindowwords='<value>',
-    q='https://news.ycombinator.com',
-    percentile='<value>',
-    numofpages='<value>',
-)
-
-res = s.browseurl(req)
+res = s.browseurl(request=operations.BrowseurlRequest(
+    inputwindowwords='10000',
+    q='https://keymate.ai',
+    percentile='1',
+    numofpages='1',
+    paging='1',
+))
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -136,7 +133,7 @@ if res.two_hundred_application_json_object is not None:
 | Error Object                 | Status Code                  | Content Type                 |
 | ---------------------------- | ---------------------------- | ---------------------------- |
 | errors.BrowseurlResponseBody | 400                          | application/json             |
-| errors.SDKError              | 4x-5xx                       | */*                          |
+| errors.SDKError              | 4xx-5xx                      | */*                          |
 
 ## browse
 
@@ -151,8 +148,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.browse(q='https://news.ycombinator.com', percentile='1', numofpages='1', paging='1')
+res = s.browse(q='http://impressive-silence.info', percentile='1', numofpages='1', paging='1')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -179,7 +175,7 @@ if res.two_hundred_application_json_object is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.BrowseResponseBody         | 400                               | application/json                  |
 | errors.BrowseResponseResponseBody | 401                               | application/json                  |
-| errors.SDKError                   | 4x-5xx                            | */*                               |
+| errors.SDKError                   | 4xx-5xx                           | */*                               |
 
 ## search
 
@@ -194,8 +190,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.search(q='bitcoin', percentile='1', numofpages='1')
+res = s.search(q='http://fake-flume.name', percentile='1', numofpages='1')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -221,7 +216,7 @@ if res.two_hundred_application_json_object is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.SearchResponseBody         | 400                               | application/json                  |
 | errors.SearchResponseResponseBody | 401                               | application/json                  |
-| errors.SDKError                   | 4x-5xx                            | */*                               |
+| errors.SDKError                   | 4xx-5xx                           | */*                               |
 
 ## ultrafastsearch
 
@@ -236,8 +231,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.ultrafastsearch(q='bitcoin', percentile='<value>', numofpages='<value>')
+res = s.ultrafastsearch(q='https://keymate.ai', percentile='100', numofpages='10')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -247,11 +241,11 @@ if res.two_hundred_application_json_object is not None:
 
 ### Parameters
 
-| Parameter           | Type                | Required            | Description         |
-| ------------------- | ------------------- | ------------------- | ------------------- |
-| `q`                 | *str*               | :heavy_check_mark:  | URL of the website. |
-| `percentile`        | *str*               | :heavy_check_mark:  | Set it as '100'     |
-| `numofpages`        | *str*               | :heavy_check_mark:  | Set it as '10'      |
+| Parameter           | Type                | Required            | Description         | Example             |
+| ------------------- | ------------------- | ------------------- | ------------------- | ------------------- |
+| `q`                 | *str*               | :heavy_check_mark:  | URL of the website. | https://keymate.ai  |
+| `percentile`        | *str*               | :heavy_check_mark:  | Set it as '100'     | 100                 |
+| `numofpages`        | *str*               | :heavy_check_mark:  | Set it as '10'      | 10                  |
 
 
 ### Response
@@ -262,7 +256,7 @@ if res.two_hundred_application_json_object is not None:
 | Error Object                       | Status Code                        | Content Type                       |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- |
 | errors.UltrafastsearchResponseBody | 400                                | application/json                   |
-| errors.SDKError                    | 4x-5xx                             | */*                                |
+| errors.SDKError                    | 4xx-5xx                            | */*                                |
 
 ## gptsbrowse
 
@@ -277,8 +271,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.gptsbrowse(q='https://memory.keymate.ai/file/ba946eda-c5ce-4234-82d2-1cec68b78a44.pdf', percentile='1', numofpages='1', paging='1')
+res = s.gptsbrowse(q='http://puzzled-advertisement.com', percentile='1', numofpages='1', paging='1')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -305,7 +298,7 @@ if res.two_hundred_application_json_object is not None:
 | ------------------------------------- | ------------------------------------- | ------------------------------------- |
 | errors.GptsbrowseResponseBody         | 400                                   | application/json                      |
 | errors.GptsbrowseResponseResponseBody | 401                                   | application/json                      |
-| errors.SDKError                       | 4x-5xx                                | */*                                   |
+| errors.SDKError                       | 4xx-5xx                               | */*                                   |
 
 ## internetsearch
 
@@ -320,8 +313,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.internetsearch(inputwindowwords='<value>', q='<value>', percentile='<value>', numofpages='<value>')
+res = s.internetsearch(inputwindowwords='8000', q='python', percentile='1', numofpages='6')
 
 if res.two_hundred_application_json_object is not None:
     # handle response
@@ -331,12 +323,12 @@ if res.two_hundred_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `inputwindowwords`                                                                                                       | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Set it as '8000' first if responsetoolarge occurs reduce it to 1000.                                                     |
-| `q`                                                                                                                      | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Search query                                                                                                             |
-| `percentile`                                                                                                             | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Start it as '1', increase to '6' if ResponseTooLarge occurs, only reduce to '3' or '4' if user requests it.              |
-| `numofpages`                                                                                                             | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Start it as '6'. Retry the request by decreasing only this one if 'ResponseTooLarge' occurs. Should be between 1 and 10. |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              | Example                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `inputwindowwords`                                                                                                       | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Set it as '8000' first if responsetoolarge occurs reduce it to 1000.                                                     | 8000                                                                                                                     |
+| `q`                                                                                                                      | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Search query                                                                                                             | python                                                                                                                   |
+| `percentile`                                                                                                             | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Start it as '1', increase to '6' if ResponseTooLarge occurs, only reduce to '3' or '4' if user requests it.              | 1                                                                                                                        |
+| `numofpages`                                                                                                             | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | Start it as '6'. Retry the request by decreasing only this one if 'ResponseTooLarge' occurs. Should be between 1 and 10. | 6                                                                                                                        |
 
 
 ### Response
@@ -348,4 +340,4 @@ if res.two_hundred_application_json_object is not None:
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.InternetsearchResponseBody         | 400                                       | application/json                          |
 | errors.InternetsearchResponseResponseBody | 401                                       | application/json                          |
-| errors.SDKError                           | 4x-5xx                                    | */*                                       |
+| errors.SDKError                           | 4xx-5xx                                   | */*                                       |

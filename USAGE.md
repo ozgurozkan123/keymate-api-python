@@ -6,8 +6,7 @@ s = keymateapi.Keymateapi(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-res = s.upsert(q='<value>')
+res = s.upsert(q='I prefer Costa over Starbucks.')
 
 if res.object is not None:
     # handle response

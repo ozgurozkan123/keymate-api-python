@@ -53,7 +53,11 @@ class BrowseurlResponse:
     http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     two_hundred_application_json_object: Optional[BrowseurlResponseBody] = dataclasses.field(default=None)
     r"""Successful operation"""
+    two_hundred_text_plain_res: Optional[str] = dataclasses.field(default=None)
+    r"""Successful operation"""
     default_application_json_object: Optional[BrowseurlResponseResponseBody] = dataclasses.field(default=None)
+    r"""Error fetching search results"""
+    default_text_plain_res: Optional[str] = dataclasses.field(default=None)
     r"""Error fetching search results"""
     
 

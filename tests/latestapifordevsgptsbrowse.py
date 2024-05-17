@@ -5,7 +5,7 @@ s = keymateapi.Keymateapi(
 )
 
 
-res = s.gptsbrowse(q='https://news.ycombinator.com', percentile='1', numofpages='1', paging='1')
+res = s.gptsbrowse(q='http://puzzled-advertisement.com', percentile='1', numofpages='1', paging='1')
 
 if res.two_hundred_application_json_object is not None:
     # handle response

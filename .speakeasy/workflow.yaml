@@ -1,0 +1,15 @@
+workflowVersion: 1.0.0
+sources:
+    first:
+        inputs:
+            - location: openapi.json
+    second:
+        inputs:
+            - location: openapi.json
+targets:
+    first-target:
+        target: python
+        source: second
+        publish:
+            pypi:
+                token: $pypi_token
