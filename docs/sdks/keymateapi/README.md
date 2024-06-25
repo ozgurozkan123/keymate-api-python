@@ -325,16 +325,27 @@ Performs an internet search based on provided query. Utilizes 'Authorization' an
 
 ```python
 import keymateapi
+import json
+from keymateapi.models import errors, operations
 
+# Get your API token at https://my.keymate.ai/pricing
 s = keymateapi.Keymateapi(
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    bearer_auth="<YOUR_API_KEY>", #DONT FORGET TO GET YOUR API KEY FROM https://my.keymate.ai/pricing requires paid plan, insert to this string
 )
-
-res = s.internetsearch(inputwindowwords='8000', q='python', percentile='1', numofpages='6')
-
-if res.two_hundred_application_json_object is not None:
-    # handle response
-    pass
+try:
+    res = s.internetsearch(inputwindowwords="5000",q="python", percentile="1", numofpages="1")
+    if res.two_hundred_application_json_object is not None:
+        # handle response
+        print(res.two_hundred_application_json_object)
+    else:
+        print(res)
+except errors.SDKError as e:
+    print("broken json")
+    res = str(e).split("Status 200")[1]
+    dict_data = json.loads(res)
+    print("result in python dict_data start")
+    print(f"{dict_data}")
+    print("result in python dict_data end")
 
 ```
 
